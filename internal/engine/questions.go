@@ -1,54 +1,65 @@
 package engine
 
+type Questions []Question
+
 type Question interface {
 	Type() QuestionType
 	GetPrompt() string
 	GetAnswer() Answer
 }
 
+type BaseQuestion struct {
+	ID     string
+	Prompt string
+}
+
+func (q BaseQuestion) GetPrompt() string { return q.Prompt }
+
+func (q BaseQuestion) GetID() string { return q.ID }
+
 type ChoiceQuestion struct {
-	Prompt  string
+	BaseQuestion
 	Options []string
 	Correct int
 }
 
 func (q ChoiceQuestion) Type() QuestionType { return Choice }
-func (q ChoiceQuestion) GetPrompt() string  { return q.Prompt }
+
 func (q ChoiceQuestion) GetAnswer() Answer {
 	return ChoiceAnswer{Selected: q.Correct}
 }
 
 type MultipleChoiceQuestion struct {
-	Prompt  string
+	BaseQuestion
 	Options []string
 	Correct []int
 }
 
 func (q MultipleChoiceQuestion) Type() QuestionType { return MultipleChoice }
-func (q MultipleChoiceQuestion) GetPrompt() string  { return q.Prompt }
+
 func (q MultipleChoiceQuestion) GetAnswer() Answer {
 	return MultipleChoiceAnswer{Selected: q.Correct}
 }
 
-type TrueFalseQuestion struct {
-	Prompt  string
+type BoolQuestion struct {
+	BaseQuestion
 	Correct bool
 }
 
-func (q TrueFalseQuestion) Type() QuestionType { return TrueFalse }
-func (q TrueFalseQuestion) GetPrompt() string  { return q.Prompt }
-func (q TrueFalseQuestion) GetAnswer() Answer {
-	return TrueFalseAnswer{Answer: q.Correct}
+func (q BoolQuestion) Type() QuestionType { return Bool }
+
+func (q BoolQuestion) GetAnswer() Answer {
+	return BoolAnswer{Answer: q.Correct}
 }
 
 type TextEntryQuestion struct {
-	Prompt         string
+	BaseQuestion
 	ExpectedAnswer string   // Idead answer for AI comparison
 	Keywords       []string // Key concepts that should be present
 }
 
 func (q TextEntryQuestion) Type() QuestionType { return TextEntry }
-func (q TextEntryQuestion) GetPrompt() string  { return q.Prompt }
+
 func (q TextEntryQuestion) GetAnswer() Answer {
 	return TextEntryAnswer{Text: q.ExpectedAnswer}
 }

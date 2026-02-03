@@ -2,6 +2,7 @@ package engine
 
 import (
 	"slices"
+	"strings"
 )
 
 type BinaryGrader struct{}
@@ -11,7 +12,7 @@ func (g *BinaryGrader) Grade(q Question, a Answer) GradeResult {
 
 	// Compare the answers
 	switch q.Type() {
-	case Choice:
+	case Choice, Bool, TextEntry:
 		return BinaryResult{
 			Correct: expected.Value() == a.Value(),
 		}
@@ -21,27 +22,20 @@ func (g *BinaryGrader) Grade(q Question, a Answer) GradeResult {
 		return BinaryResult{
 			Correct: slices.Equal(exp, usr),
 		}
-	case TrueFalse:
-		return BinaryResult{
-			Correct: expected.Value() == a.Value(),
-		}
-
-	case TextEntry:
-		return BinaryResult{
-			Correct: expected.Value() == a.Value(),
-		}
 	}
 
 	return BinaryResult{Correct: false}
 }
 
+// AccuracyGrader - for TextEntry with partial credit
 type AccuracyGrader struct{}
 
 func (g *AccuracyGrader) Grade(q Question, a Answer) GradeResult {
+	// for non-text questions, treat as binary
 	if q.Type() != TextEntry {
-
 		binary := (&BinaryGrader{}).Grade(q, a)
 		isCorrect := binary.IsCorrect()
+
 		accuracy := float32(0)
 		if isCorrect {
 			accuracy = 1.0
@@ -54,59 +48,66 @@ func (g *AccuracyGrader) Grade(q Question, a Answer) GradeResult {
 		}
 	}
 
-	textQ := q.(TextEntryQuestion)
-	textA := a.(TextEntryAnswer)
+	// For TextEntry, do keyword matching (placeholder until AI)
+	// TextEntry grading
+	textQ, ok := q.(TextEntryQuestion)
+	if !ok {
+		return AccuracyResult{Correct: false}
+	}
 
+	textA, ok := a.(TextEntryAnswer)
+	if !ok {
+		return AccuracyResult{Correct: false}
+	}
+
+	answerText := strings.ToLower(textA.Text)
+
+	// Count how many keywords are present
 	keywordsFound := 0
 	for _, keyword := range textQ.Keywords {
-		// Simple comtains check (can make this smarter later)
-		if len(keyword) > 0 && len(textA.Text) > 0 {
+		if strings.Contains(answerText, strings.ToLower(keyword)) {
 			keywordsFound++
 		}
 	}
 
-	accuracy := float32(keywordsFound) / float32(len(textQ.Keywords))
+	accuracy := float32(0)
+	if len(textQ.Keywords) > 0 {
+		accuracy = float32(keywordsFound) / float32(len(textQ.Keywords))
+	}
 
 	return AccuracyResult{
-		Correct:  accuracy >= 0.6, // 60% threshold
+		Correct:  accuracy == 1.0,
 		Accuracy: accuracy,
-		Feedback: "Placeholder - AI grading coming soon",
+		Feedback: "",
 	}
 }
 
-type ScoreGrader struct {
-	BasePoints int
-}
+type ScoreGrader struct{}
 
 func (g *ScoreGrader) Grade(q Question, a Answer) GradeResult {
-	binary := (&BinaryGrader{}).Grade(q, a)
+	expected := q.GetAnswer()
 
-	if !binary.IsCorrect() {
+	// Compare the answers
+	switch q.Type() {
+	case Choice, Bool, TextEntry:
 		return ScoreResult{
-			Correct:      false,
-			PointsEarned: 0,
-			MaxPoints:    g.BasePoints,
-			Multiplier:   1.0,
+			Correct: expected.Value() == a.Value(),
+		}
+	case MultipleChoice:
+		exp := expected.Value().([]int)
+		usr := a.Value().([]int)
+		return ScoreResult{
+			Correct: slices.Equal(exp, usr),
 		}
 	}
 
-	// Correct answer - award points
-	// TODO: Add tiem multiplier later
-	return ScoreResult{
-		Correct:      true,
-		PointsEarned: g.BasePoints,
-		MaxPoints:    g.BasePoints,
-		Multiplier:   1.0,
-	}
+	return ScoreResult{Correct: false}
 }
 
 type PracticeGrader struct{}
 
 func (g *PracticeGrader) Grade(q Question, a Answer) GradeResult {
-	expected := q.GetAnswer()
-
 	return PracticeResult{
-		CorrectAnswer: expected.Value().(string),
-		Explanation:   "Practice mode - explanation coming soon",
+		CorrectAnswer: q.GetAnswer().Value().(string),
 	}
 }

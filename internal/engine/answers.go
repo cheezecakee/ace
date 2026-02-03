@@ -19,12 +19,12 @@ type MultipleChoiceAnswer struct {
 func (a MultipleChoiceAnswer) Type() QuestionType { return MultipleChoice }
 func (a MultipleChoiceAnswer) Value() any         { return a.Selected }
 
-type TrueFalseAnswer struct {
+type BoolAnswer struct {
 	Answer bool
 }
 
-func (a TrueFalseAnswer) Type() QuestionType { return TrueFalse }
-func (a TrueFalseAnswer) Value() any         { return a.Answer }
+func (a BoolAnswer) Type() QuestionType { return Bool }
+func (a BoolAnswer) Value() any         { return a.Answer }
 
 type TextEntryAnswer struct {
 	Text string

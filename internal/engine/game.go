@@ -5,6 +5,33 @@ type Game struct {
 	Format Format
 }
 
+type ModeID int
+
+const (
+	StandardMode ModeID = iota
+	QuickMode
+	RapidMode
+	HardcoreMode
+	CustomMode
+)
+
+func (m ModeID) String() string {
+	switch m {
+	case StandardMode:
+		return "standard"
+	case QuickMode:
+		return "quick"
+	case RapidMode:
+		return "rapid"
+	case HardcoreMode:
+		return "hardcore"
+	case CustomMode:
+		return "custom"
+	default:
+		return ""
+	}
+}
+
 type Difficulty int
 
 const (
@@ -57,7 +84,7 @@ const (
 	Choice QuestionType = iota + 1
 	MultipleChoice
 	TextEntry
-	TrueFalse
+	Bool
 )
 
 func (qt QuestionType) String() string {
@@ -68,8 +95,8 @@ func (qt QuestionType) String() string {
 		return "multiple choice"
 	case TextEntry:
 		return "text entry"
-	case TrueFalse:
-		return "true/false"
+	case Bool:
+		return "bool"
 	default:
 		return "unknown"
 	}
@@ -106,8 +133,8 @@ const (
 	PerQuestionWithBonus          // e.g 1|30 style Just like chess for every right question you get extra time!
 )
 
-func (tc TimeMode) String() string {
-	switch tc {
+func (tm TimeMode) String() string {
+	switch tm {
 	case Unlimited:
 		return "unlimited"
 	case PerQuestion:
@@ -128,9 +155,8 @@ const (
 	Scaling
 )
 
-func (dm Progression) String() string {
-	// Questions don't get harder
-	switch dm {
+func (p Progression) String() string {
+	switch p {
 	case Fixed:
 		return "fixed"
 	case Scaling:
@@ -147,9 +173,9 @@ const (
 	Locked
 )
 
-func (nm Navigation) String() string {
+func (n Navigation) String() string {
 	// Whether you can navigate back to the previous question
-	switch nm {
+	switch n {
 	case Free:
 		return "free"
 	case Locked:

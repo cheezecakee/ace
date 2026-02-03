@@ -17,6 +17,28 @@ const (
 	Score
 )
 
+func GetGrader(mode ModeID) GradePolicy {
+	switch mode {
+	case StandardMode:
+		return &AccuracyGrader{}
+
+	case QuickMode:
+		return &BinaryGrader{}
+
+	case RapidMode:
+		return &ScoreGrader{}
+
+	case HardcoreMode:
+		return &BinaryGrader{}
+
+	case CustomMode:
+		return &PracticeGrader{}
+
+	default:
+		return &BinaryGrader{}
+	}
+}
+
 type AccuracyResult struct {
 	Correct  bool
 	Accuracy float32 // 0-1

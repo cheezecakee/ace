@@ -6,18 +6,20 @@ type Mode interface {
 	Format(difficulty Difficulty) Format
 }
 
-func GetGameMode(mode string) Mode {
+func GetGameMode(mode ModeID) Mode {
 	switch mode {
-	case "custom":
+	case CustomMode:
 		return newCustomMode()
-	case "rapid":
+	case RapidMode:
 		return newRapidMode()
-	case "quick":
+	case QuickMode:
 		return newQuickMode()
-	case "hardcore":
+	case HardcoreMode:
 		return newHardcoreMode()
-	default:
+	case StandardMode:
 		return newStandardMode()
+	default:
+		return nil
 	}
 }
 
@@ -72,7 +74,7 @@ func (gm *Quick) Format(difficulty Difficulty) Format {
 			Difficulty: difficulty,
 		},
 		Question: QuestionRules{
-			Types:     QuestionTypeSet{Choice, MultipleChoice, TrueFalse},
+			Types:     QuestionTypeSet{Choice, MultipleChoice, Bool},
 			Randomize: true,
 		},
 		Description: "Quick-fire questions to warm up before interviews",
@@ -103,7 +105,7 @@ func (gm *Rapid) Format(difficulty Difficulty) Format {
 			Difficulty: difficulty,
 		},
 		Question: QuestionRules{
-			Types:     QuestionTypeSet{Choice, MultipleChoice, TrueFalse},
+			Types:     QuestionTypeSet{Choice, MultipleChoice, Bool},
 			Randomize: true,
 		},
 		Description: "Fast-paced reaction training",
@@ -134,7 +136,7 @@ func (gm *Hardcore) Format(difficulty Difficulty) Format {
 			Difficulty: Entry,
 		},
 		Question: QuestionRules{
-			Types:     QuestionTypeSet{Choice, MultipleChoice, TrueFalse},
+			Types:     QuestionTypeSet{Choice, MultipleChoice, Bool},
 			Randomize: true,
 		},
 		Description: "High-pressure survival mode",
