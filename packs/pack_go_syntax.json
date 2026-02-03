@@ -1,0 +1,23 @@
+{
+  "id": "pack_go_syntax",
+  "name": "Go Syntax",
+  "creator": "Ace Team",
+  "role": "devops",
+  "version": "1.0.0",
+  "categories": {
+    "functions": {
+      "choice": [
+        {
+          "id": "go_func",
+          "difficulty": "junior",
+          "prompt": "Which keyword declares a function in Go?",
+          "options": ["fn", "func", "function", "def"],
+          "answer": 1
+        }
+      ],
+      "multipleChoice": [],
+      "Bool": [],
+      "textEntry": []
+    }
+  }
+}

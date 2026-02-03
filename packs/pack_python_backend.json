@@ -1,0 +1,39 @@
+{
+    "id": "pack_python_backend",
+    "name": "Python Backend Basics",
+    "creator": "Backend Crew",
+    "role": "backend",
+    "version": "1.1.1",
+    "created_at": "2026-01-16T00:50:00Z",
+    "updated_at": "2026-01-16T00:50:00Z",
+    "categories": {
+      "django": {
+        "choice": [
+          {
+            "id": "django_orm",
+            "difficulty": "mid",
+            "prompt": "What does ORM stand for in Django?",
+            "options": ["Object Relational Mapping", "Online Resource Manager", "Object Request Model"],
+            "answer": 0
+          }
+        ],
+        "bool": [
+          {
+            "id": "django_mtv",
+            "difficulty": "junior",
+            "prompt": "Django follows the MTV (Model-Template-View) pattern.",
+            "answer": true
+          }
+        ],
+        "multiple_choice": [
+          {
+            "id": "django_middleware",
+            "difficulty": "entry",
+            "prompt": "Common middleware tasks include:",
+            "options": ["Authentication", "Logging", "Caching", "All of the above"],
+            "answer": [0,1,2,3]
+          }
+        ]
+      }
+    }
+  }

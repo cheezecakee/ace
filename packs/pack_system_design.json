@@ -1,0 +1,39 @@
+{
+    "id": "pack_system_design",
+    "name": "System Design Interview",
+    "creator": "Senior Engineers",
+    "role": "senior developer",
+    "version": "1.0.1",
+    "created_at": "2026-01-16T00:50:00Z",
+    "updated_at": "2026-01-16T00:50:00Z",
+    "categories": {
+      "basics": {
+        "multiple_choice": [
+          {
+            "id": "load_balancer",
+            "difficulty": "senior",
+            "prompt": "Common ways to achieve horizontal scaling include:",
+            "options": ["Add more CPU to single server", "Add more servers + load balancer", "Use faster database only"],
+            "answer": [1]
+          }
+        ],
+        "bool": [
+          {
+            "id": "cap_theorem",
+            "difficulty": "entry",
+            "prompt": "CAP theorem states a distributed system can guarantee all three: Consistency, Availability, Partition tolerance.",
+            "answer": false
+          }
+        ],
+        "text_entry": [
+          {
+            "id": "rate_limit",
+            "difficulty": "mid",
+            "prompt": "Name one common algorithm for rate limiting.",
+            "expected": "Token Bucket",
+            "keywords": ["token", "bucket", "leaky", "bucket", "fixed", "window"]
+          }
+        ]
+      }
+    }
+  }

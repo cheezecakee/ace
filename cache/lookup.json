@@ -1,0 +1,105 @@
+{
+  "1": {
+    "backend": {
+      "1": [
+        "django_middleware"
+      ]
+    },
+    "data engineer": {
+      "1": [
+        "sql_index"
+      ]
+    },
+    "devops": {
+      "3": [
+        "docker_run"
+      ]
+    },
+    "frontend": {
+      "2": [
+        "react_keys"
+      ],
+      "3": [
+        "js_destructuring"
+      ]
+    },
+    "senior developer": {
+      "2": [
+        "cap_theorem"
+      ]
+    }
+  },
+  "2": {
+    "backend": {
+      "2": [
+        "django_mtv"
+      ]
+    },
+    "backend developer": {
+      "0": [
+        "go_var"
+      ]
+    },
+    "data engineer": {
+      "3": [
+        "sql_count"
+      ]
+    },
+    "devops": {
+      "0": [
+        "go_func",
+        "docker_image"
+      ]
+    },
+    "frontend": {
+      "0": [
+        "api_meaning",
+        "js_arrow"
+      ]
+    },
+    "student": {
+      "0": [
+        "egypt_pyramids"
+      ]
+    },
+    "teacher": {
+      "0": [
+        "math_add"
+      ]
+    }
+  },
+  "3": {
+    "backend": {
+      "0": [
+        "django_orm"
+      ]
+    },
+    "data engineer": {
+      "0": [
+        "sql_join"
+      ]
+    },
+    "devops": {
+      "2": [
+        "ci_cd_auto"
+      ]
+    },
+    "frontend": {
+      "0": [
+        "react_hook"
+      ]
+    },
+    "senior developer": {
+      "3": [
+        "rate_limit"
+      ]
+    }
+  },
+  "4": {
+    "senior developer": {
+      "1": [
+        "load_balancer"
+      ]
+    }
+  }
+}

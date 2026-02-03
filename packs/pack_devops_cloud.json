@@ -1,0 +1,41 @@
+{
+    "id": "pack_devops_cloud",
+    "name": "DevOps & Cloud Basics",
+    "creator": "Ops Team",
+    "role": "devops",
+    "version": "1.0.1",
+    "created_at": "2026-01-16T00:50:00Z",
+    "updated_at": "2026-01-16T00:50:00Z",
+    "categories": {
+      "docker": {
+        "choice": [
+          {
+            "id": "docker_image",
+            "difficulty": "junior",
+            "prompt": "What is the main difference between an image and a container?",
+            "options": ["Image is runtime, container is blueprint", "Image is blueprint, container is runtime instance", "They are the same"],
+            "answer": 1
+          }
+        ],
+        "text_entry": [
+          {
+            "id": "docker_run",
+            "difficulty": "entry",
+            "prompt": "Write the basic command to run nginx in detached mode.",
+            "expected": "docker run -d nginx",
+            "keywords": ["docker", "run", "-d", "nginx"]
+          }
+        ]
+      },
+      "ci_cd": {
+        "bool": [
+          {
+            "id": "ci_cd_auto",
+            "difficulty": "mid",
+            "prompt": "CI/CD pipelines eliminate the need for manual testing.",
+            "answer": false
+          }
+        ]
+      }
+    }
+  }

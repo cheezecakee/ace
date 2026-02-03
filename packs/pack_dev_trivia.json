@@ -1,0 +1,27 @@
+{
+  "id": "pack_dev_trivia",
+  "name": "Developer Trivia",
+  "creator": "Community",
+  "role": "frontend",
+  "version": "1.1.0",
+  "categories": {
+    "general": {
+      "choice": [
+        {
+          "id": "api_meaning",
+          "difficulty": "junior",
+          "prompt": "What does API stand for?",
+          "options": [
+            "Application Programming Interface",
+            "Advanced Program Interaction",
+            "Applied Protocol Instruction"
+          ],
+          "answer": 0
+        }
+      ],
+      "multipleChoice": [],
+      "Bool": [],
+      "textEntry": []
+    }
+  }
+}

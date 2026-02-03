@@ -1,0 +1,23 @@
+{
+  "id": "pack_math_basics",
+  "name": "Math Basics",
+  "creator": "Ace Team",
+  "role": "teacher",
+  "version": "1.0.0",
+  "categories": {
+    "arithmetic": {
+      "choice": [
+        {
+          "id": "math_add",
+          "difficulty": "junior",
+          "prompt": "What is 2 + 2?",
+          "options": ["3", "4", "5"],
+          "answer": 1
+        }
+      ],
+      "multipleChoice": [],
+      "Bool": [],
+      "textEntry": []
+    }
+  }
+}

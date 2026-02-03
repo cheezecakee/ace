@@ -1,0 +1,23 @@
+{
+  "id": "pack_go_backend",
+  "name": "Go Backend Basics",
+  "creator": "Ace Team",
+  "role": "backend developer",
+  "version": "1.0.0",
+  "categories": {
+    "basics": {
+      "choice": [
+        {
+          "id": "go_var",
+          "difficulty": "junior",
+          "prompt": "Which keyword is used to declare a variable in Go?",
+          "options": ["let", "var", "const", "define"],
+          "answer": 1
+        }
+      ],
+      "multipleChoice": [],
+      "Bool": [],
+      "textEntry": []
+    }
+  }
+}

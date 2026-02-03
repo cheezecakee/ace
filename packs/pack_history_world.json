@@ -1,0 +1,23 @@
+{
+  "id": "pack_history_world",
+  "name": "World History",
+  "creator": "History Dept",
+  "role": "student",
+  "version": "1.0.0",
+  "categories": {
+    "ancient": {
+      "choice": [
+        {
+          "id": "egypt_pyramids",
+          "difficulty": "junior",
+          "prompt": "Which civilization built the pyramids?",
+          "options": ["Romans", "Greeks", "Egyptians"],
+          "answer": 2
+        }
+      ],
+      "multipleChoice": [],
+      "Bool": [],
+      "textEntry": []
+    }
+  }
+}

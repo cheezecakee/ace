@@ -1,0 +1,208 @@
+{
+  "api_meaning": {
+    "ID": "api_meaning",
+    "Prompt": "What does API stand for?",
+    "Options": [
+      "Application Programming Interface",
+      "Advanced Program Interaction",
+      "Applied Protocol Instruction"
+    ],
+    "Correct": 0
+  },
+  "cap_theorem": {
+    "ID": "cap_theorem",
+    "Prompt": "CAP theorem states a distributed system can guarantee all three: Consistency, Availability, Partition tolerance.",
+    "Correct": false
+  },
+  "ci_cd_auto": {
+    "ID": "ci_cd_auto",
+    "Prompt": "CI/CD pipelines eliminate the need for manual testing.",
+    "Correct": false
+  },
+  "django_middleware": {
+    "ID": "django_middleware",
+    "Prompt": "Common middleware tasks include:",
+    "Options": [
+      "Authentication",
+      "Logging",
+      "Caching",
+      "All of the above"
+    ],
+    "Correct": [
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  "django_mtv": {
+    "ID": "django_mtv",
+    "Prompt": "Django follows the MTV (Model-Template-View) pattern.",
+    "Correct": true
+  },
+  "django_orm": {
+    "ID": "django_orm",
+    "Prompt": "What does ORM stand for in Django?",
+    "Options": [
+      "Object Relational Mapping",
+      "Online Resource Manager",
+      "Object Request Model"
+    ],
+    "Correct": 0
+  },
+  "docker_image": {
+    "ID": "docker_image",
+    "Prompt": "What is the main difference between an image and a container?",
+    "Options": [
+      "Image is runtime, container is blueprint",
+      "Image is blueprint, container is runtime instance",
+      "They are the same"
+    ],
+    "Correct": 1
+  },
+  "docker_run": {
+    "ID": "docker_run",
+    "Prompt": "Write the basic command to run nginx in detached mode.",
+    "ExpectedAnswer": "docker run -d nginx",
+    "Keywords": [
+      "docker",
+      "run",
+      "-d",
+      "nginx"
+    ]
+  },
+  "egypt_pyramids": {
+    "ID": "egypt_pyramids",
+    "Prompt": "Which civilization built the pyramids?",
+    "Options": [
+      "Romans",
+      "Greeks",
+      "Egyptians"
+    ],
+    "Correct": 2
+  },
+  "go_func": {
+    "ID": "go_func",
+    "Prompt": "Which keyword declares a function in Go?",
+    "Options": [
+      "fn",
+      "func",
+      "function",
+      "def"
+    ],
+    "Correct": 1
+  },
+  "go_var": {
+    "ID": "go_var",
+    "Prompt": "Which keyword is used to declare a variable in Go?",
+    "Options": [
+      "let",
+      "var",
+      "const",
+      "define"
+    ],
+    "Correct": 1
+  },
+  "js_arrow": {
+    "ID": "js_arrow",
+    "Prompt": "What does =\u003e represent in modern JavaScript?",
+    "Options": [
+      "Function declaration",
+      "Arrow function",
+      "Comparison operator"
+    ],
+    "Correct": 1
+  },
+  "js_destructuring": {
+    "ID": "js_destructuring",
+    "Prompt": "Write the syntax to destructure name from an object {name: 'Ana'}.",
+    "ExpectedAnswer": "const {name} = obj",
+    "Keywords": [
+      "destructuring",
+      "const",
+      "{name}"
+    ]
+  },
+  "load_balancer": {
+    "ID": "load_balancer",
+    "Prompt": "Common ways to achieve horizontal scaling include:",
+    "Options": [
+      "Add more CPU to single server",
+      "Add more servers + load balancer",
+      "Use faster database only"
+    ],
+    "Correct": [
+      1
+    ]
+  },
+  "math_add": {
+    "ID": "math_add",
+    "Prompt": "What is 2 + 2?",
+    "Options": [
+      "3",
+      "4",
+      "5"
+    ],
+    "Correct": 1
+  },
+  "rate_limit": {
+    "ID": "rate_limit",
+    "Prompt": "Name one common algorithm for rate limiting.",
+    "ExpectedAnswer": "Token Bucket",
+    "Keywords": [
+      "token",
+      "bucket",
+      "leaky",
+      "bucket",
+      "fixed",
+      "window"
+    ]
+  },
+  "react_hook": {
+    "ID": "react_hook",
+    "Prompt": "Which hook manages state in functional components?",
+    "Options": [
+      "useEffect",
+      "useState",
+      "useContext"
+    ],
+    "Correct": 1
+  },
+  "react_keys": {
+    "ID": "react_keys",
+    "Prompt": "Keys help React identify which items have changed in a list.",
+    "Correct": true
+  },
+  "sql_count": {
+    "ID": "sql_count",
+    "Prompt": "Write the SQL keyword to count rows.",
+    "ExpectedAnswer": "COUNT",
+    "Keywords": [
+      "count",
+      "COUNT",
+      "Count"
+    ]
+  },
+  "sql_index": {
+    "ID": "sql_index",
+    "Prompt": "Indexes improve:",
+    "Options": [
+      "Read performance",
+      "Write performance",
+      "Storage usage"
+    ],
+    "Correct": [
+      0
+    ]
+  },
+  "sql_join": {
+    "ID": "sql_join",
+    "Prompt": "Which JOIN returns all rows from both tables with matching records?",
+    "Options": [
+      "INNER JOIN",
+      "LEFT JOIN",
+      "FULL OUTER JOIN"
+    ],
+    "Correct": 2
+  }
+}

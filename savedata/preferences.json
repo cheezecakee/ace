@@ -1,0 +1,17 @@
+{
+ "settings": {
+  "language": "en",
+  "active_packs": [
+   "pack_go_backend",
+   "pack_go_syntax",
+   "pack_python_backend",
+   "pack_devops_cloud",
+   "pack_history_world",
+   "pack_dev_trivia",
+   "pack_js_frontend",
+   "pack_math_basics",
+   "pack_sql_database",
+   "pack_system_design"
+  ]
+ }
+}

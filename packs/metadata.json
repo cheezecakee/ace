@@ -1,0 +1,198 @@
+{
+  "questions": 21,
+  "categories": [
+    "docker",
+    "ci_cd",
+    "basics",
+    "functions",
+    "django",
+    "queries",
+    "ancient",
+    "es6",
+    "react",
+    "arithmetic",
+    "general"
+  ],
+  "roles": [
+    "senior developer",
+    "frontend",
+    "devops",
+    "backend developer",
+    "student",
+    "teacher",
+    "backend",
+    "data engineer"
+  ],
+  "catalog": {
+    "backend": [
+      "pack_python_backend"
+    ],
+    "backend developer": [
+      "pack_go_backend"
+    ],
+    "data engineer": [
+      "pack_sql_database"
+    ],
+    "devops": [
+      "pack_devops_cloud",
+      "pack_go_syntax"
+    ],
+    "frontend": [
+      "pack_dev_trivia",
+      "pack_js_frontend"
+    ],
+    "senior developer": [
+      "pack_system_design"
+    ],
+    "student": [
+      "pack_history_world"
+    ],
+    "teacher": [
+      "pack_math_basics"
+    ]
+  },
+  "packs": {
+    "pack_dev_trivia": {
+      "ID": "pack_dev_trivia",
+      "Name": "Developer Trivia",
+      "Role": "frontend",
+      "Categories": [
+        "general"
+      ],
+      "Version": "1.1.0",
+      "Creator": "Community",
+      "CreatedAt": "0001-01-01T00:00:00Z",
+      "UpdatedAt": "0001-01-01T00:00:00Z",
+      "Path": "packs\\pack_dev_trivia.json",
+      "Count": 1
+    },
+    "pack_devops_cloud": {
+      "ID": "pack_devops_cloud",
+      "Name": "DevOps \u0026 Cloud Basics",
+      "Role": "devops",
+      "Categories": [
+        "docker",
+        "ci_cd"
+      ],
+      "Version": "1.0.1",
+      "Creator": "Ops Team",
+      "CreatedAt": "2026-01-16T00:50:00Z",
+      "UpdatedAt": "2026-01-16T00:50:00Z",
+      "Path": "packs\\pack_devops_cloud.json",
+      "Count": 3
+    },
+    "pack_go_backend": {
+      "ID": "pack_go_backend",
+      "Name": "Go Backend Basics",
+      "Role": "backend developer",
+      "Categories": [
+        "basics"
+      ],
+      "Version": "1.0.0",
+      "Creator": "Ace Team",
+      "CreatedAt": "0001-01-01T00:00:00Z",
+      "UpdatedAt": "0001-01-01T00:00:00Z",
+      "Path": "packs\\pack_go_backend.json",
+      "Count": 1
+    },
+    "pack_go_syntax": {
+      "ID": "pack_go_syntax",
+      "Name": "Go Syntax",
+      "Role": "devops",
+      "Categories": [
+        "functions"
+      ],
+      "Version": "1.0.0",
+      "Creator": "Ace Team",
+      "CreatedAt": "0001-01-01T00:00:00Z",
+      "UpdatedAt": "0001-01-01T00:00:00Z",
+      "Path": "packs\\pack_go_syntax.json",
+      "Count": 1
+    },
+    "pack_history_world": {
+      "ID": "pack_history_world",
+      "Name": "World History",
+      "Role": "student",
+      "Categories": [
+        "ancient"
+      ],
+      "Version": "1.0.0",
+      "Creator": "History Dept",
+      "CreatedAt": "0001-01-01T00:00:00Z",
+      "UpdatedAt": "0001-01-01T00:00:00Z",
+      "Path": "packs\\pack_history_world.json",
+      "Count": 1
+    },
+    "pack_js_frontend": {
+      "ID": "pack_js_frontend",
+      "Name": "JavaScript Frontend",
+      "Role": "frontend",
+      "Categories": [
+        "es6",
+        "react"
+      ],
+      "Version": "1.0.1",
+      "Creator": "Frontend Team",
+      "CreatedAt": "2026-01-16T00:50:00Z",
+      "UpdatedAt": "2026-01-16T00:50:00Z",
+      "Path": "packs\\pack_js_frontend.json",
+      "Count": 4
+    },
+    "pack_math_basics": {
+      "ID": "pack_math_basics",
+      "Name": "Math Basics",
+      "Role": "teacher",
+      "Categories": [
+        "arithmetic"
+      ],
+      "Version": "1.0.0",
+      "Creator": "Ace Team",
+      "CreatedAt": "0001-01-01T00:00:00Z",
+      "UpdatedAt": "0001-01-01T00:00:00Z",
+      "Path": "packs\\pack_math_basics.json",
+      "Count": 1
+    },
+    "pack_python_backend": {
+      "ID": "pack_python_backend",
+      "Name": "Python Backend Basics",
+      "Role": "backend",
+      "Categories": [
+        "django"
+      ],
+      "Version": "1.1.1",
+      "Creator": "Backend Crew",
+      "CreatedAt": "2026-01-16T00:50:00Z",
+      "UpdatedAt": "2026-01-16T00:50:00Z",
+      "Path": "packs\\pack_python_backend.json",
+      "Count": 3
+    },
+    "pack_sql_database": {
+      "ID": "pack_sql_database",
+      "Name": "SQL \u0026 Databases",
+      "Role": "data engineer",
+      "Categories": [
+        "queries"
+      ],
+      "Version": "1.0.1",
+      "Creator": "Data Team",
+      "CreatedAt": "2026-01-16T00:50:00Z",
+      "UpdatedAt": "2026-01-16T00:50:00Z",
+      "Path": "packs\\pack_sql_database.json",
+      "Count": 3
+    },
+    "pack_system_design": {
+      "ID": "pack_system_design",
+      "Name": "System Design Interview",
+      "Role": "senior developer",
+      "Categories": [
+        "basics"
+      ],
+      "Version": "1.0.1",
+      "Creator": "Senior Engineers",
+      "CreatedAt": "2026-01-16T00:50:00Z",
+      "UpdatedAt": "2026-01-16T00:50:00Z",
+      "Path": "packs\\pack_system_design.json",
+      "Count": 3
+    }
+  }
+}
